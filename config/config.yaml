@@ -1,0 +1,51 @@
+# 机器人参数
+robot:
+  length: 0.5  # 车身长度
+  width: 0.3   # 车身宽度
+  height: 0.1  # 车身高度
+  mass: 1.0    # 质量
+
+# 控制器参数
+controller:
+  max_speed: 12.0        # 进一步降低最大速度以提高控制精度
+  max_steering: 0.8      # 保持较大的转向能力
+  # PID参数 - 速度控制
+  speed_pid:
+    kp: 1.5
+    ki: 0.1
+    kd: 0.2
+  # PID参数 - 转向控制
+  steering_pid:
+    kp: 3.0
+    ki: 0.1
+    kd: 0.3
+  # 避障参数
+  obstacle_avoidance:
+    influence_distance: 4.0  # 增加探测距离，提前规避
+    safe_distance: 1.5      # 安全距离阈值
+    obstacle_gain: 2.5      # 增加避障权重
+    target_gain: 1.0        # 保持目标权重
+    path_following_gain: 2.0
+    min_speed_factor: 0.2
+    weight_smooth_factor: 5.0
+    multi_obstacle_factor: 1.5  # 多障碍物影响因子
+
+# 轨迹参数
+trajectory:
+  type: "circle"  # circle, square, custom
+  radius: 3.0     # 圆形轨迹半径
+  points: []      # 自定义轨迹点 
+
+# 可视化参数
+visualization:
+  plot_update_freq: 10  # 图表更新频率
+  max_data_points: 1000  # 最大数据点数
+  error_scale: 10.0     # 误差显示比例
+
+# 环境参数
+environment:
+  num_obstacles: 3        # 动态障碍物数量
+  obstacle_speed: 0.1    # 障碍物最大速度
+  lidar_rays: 32         # 激光雷达射线数量
+  lidar_range: 5.0       # 激光雷达最大范围
+  wind_force: 5.0       # 最大风力干扰
