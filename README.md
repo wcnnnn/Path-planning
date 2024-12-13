@@ -176,7 +176,4 @@ python main.py
 
 [MIT License](LICENSE)
 
-## 联系方式
 
-- 作者：[您的名字]
-- 邮箱：[您的邮箱]
